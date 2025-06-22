@@ -1,24 +1,24 @@
-# ⚙️ MJ-Backend-Template
+# MJ-Backend-Template
 
 A clean and professional backend starter template built with **Node.js**, **Express**, **MongoDB (Mongoose)**, and **Cloudinary**. Designed to help you quickly scaffold REST APIs with proper architecture, built-in utilities, and a focus on clean error handling and developer experience.
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ Modular and scalable project structure
-- 🔐 JWT-based user authentication with login/register
-- ☁️ File uploads via Cloudinary
-- 🧱 MongoDB setup using Mongoose
-- 🛠 Built-in utilities:
+-  Modular and scalable project structure
+-  JWT-based user authentication with login/register
+-  File uploads via Cloudinary
+-  MongoDB setup using Mongoose
+-  Built-in utilities:
   - `asyncHandler` for error-safe async functions
   - `ApiError` class for custom error throwing
   - `ApiResponse` for consistent API formatting
-- 🧪 Ready for development and easy to extend
+-  Ready for development and easy to extend
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 - **Node.js + Express** – API framework
 - **MongoDB + Mongoose** – NoSQL database & ODM
@@ -29,7 +29,7 @@ A clean and professional backend starter template built with **Node.js**, **Expr
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
