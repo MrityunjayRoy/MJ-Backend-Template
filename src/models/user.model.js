@@ -11,6 +11,13 @@ const userSchema = new Schema(
             lowercase: true,
             trim: true
         },
+        fullName: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true
+        },
         email: {
             type: String,
             required: true,
@@ -51,11 +58,9 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 }
 
 userSchema.methods.generateAccessToken = function () {
-    jwt.sign(
+    return jwt.sign(
         {
-            _id: this._id,
-            _email: this.email,
-            _username: this.username,
+            id: this._id,
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
@@ -65,9 +70,9 @@ userSchema.methods.generateAccessToken = function () {
 }
 
 userSchema.methods.generateRefreshToken = function () {
-    jwt.sign(
+    return jwt.sign(
         {
-            _id: this._id,
+            id: this._id,
         },
         process.env.REFRESH_TOKEN_SECRET,
         {

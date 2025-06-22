@@ -3,22 +3,24 @@ import fs from 'fs';
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
-    api_key: CLOUDINARY_API_KEY,
-    api_secret: CLOUDINARY_API_SECRET,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const uploadOnCLoudinary = async (loaclFile) => {
+const uploadOnCLoudinary = async (localFile) => {
     try {
-        if (!loaclFile) return null;
+        if (!localFile) return null;
 
         // uploading to cloudinary
         const response = await cloudinary.uploader.upload(
-            loaclFile, { public_id: 'shoes' }
+            localFile, { public_id: 'shoes' }
         )
+
+        fs.unlinkSync(localFile);
         return response;
 
     } catch (error) {
-        fs.unlink(loaclFile);
+        fs.unlink(localFile);
         console.log("Error uploaing file to cloudinary", error);
         return null;
     }
